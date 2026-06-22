@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Nonogram — Can Silay</title>
+<meta name="description" content="3D Nonogram — a voxel puzzle editor with a self-hosted Flask server for sharing player-made levels.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%230d1117'/%3E%3Ctext x='12' y='17' font-family='monospace' font-size='13' fill='%235fd3df' text-anchor='middle'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="bracket">&lt;</span>Can Silay<span class="bracket">/&gt;</span></a>
+    <nav class="main-nav" aria-label="Primary">
+      <a class="nav-link" href="../index.html#about">about</a>
+      <a class="nav-link" href="../index.html#projects">projects</a>
+      <a class="nav-link" href="../index.html#skills">skills</a>
+      <a class="nav-link" href="../index.html#contact">contact</a>
+      <div class="social-row">
+        <a href="https://github.com/Canpaii" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.74.4-1.26.72-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.07.78 2.15 0 1.56-.01 2.81-.01 3.19 0 .31.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/can-silay-42434b2b8" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+        </a>
+      </div>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="tabbar" aria-label="Breadcrumb">
+  <div class="wrap">
+    <a href="../index.html">home</a><span>/</span>
+    <a href="../index.html#projects">projects</a><span>/</span>
+    <span class="current">3d-nonogram.cs</span>
+  </div>
+</nav>
+
+<main>
+<section class="proj-hero">
+  <div class="wrap">
+    <div class="kicker">Voxel Puzzle Game · Unity / Flask</div>
+    <h1>3D Nonogram</h1>
+    <p class="intro">For this project I wanted to explore how to set up a server for Unity. With no prior experience in networking or backend systems, I built my own server from scratch to support level sharing and storage.</p>
+
+    <div class="proj-image">
+      <img src="https://images.squarespace-cdn.com/content/v1/68dbb70b1323f501bc5ce8be/edef71bc-1145-4a40-b1c1-1be4bda1312f/image_2025-09-30_150730749.png" alt="3D Nonogram screenshot" loading="lazy">
+    </div>
+
+    <div class="info-block">
+      <span class="comment">// project info</span>
+      <dl>
+      <dt>Role:</dt><dd>Programmer &amp; Designer</dd>
+      <dt>Tools:</dt><dd>C# &amp; Python Flask server</dd>
+      <dt>Hardware:</dt><dd>Raspberry Pi 5</dd>
+      <dt>Time:</dt><dd>8 Weeks</dd>
+      <dt>Github:</dt><dd><a href="https://github.com/Canpaii/3D-Nonogram-Project" target="_blank" rel="noopener">3D-Nonogram-Project</a></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section prose">
+  <div class="wrap">
+    <h2>Development</h2>
+<p>3D Nonogram is my current solo project — players create their own voxel-based levels and share them with others.</p>
+<p>I started by building a level editor with a save and load system that serializes to JSON for easy backend storage.</p>
+<p>Then I set up the server. It runs on a Raspberry Pi 5 using Python Flask. To avoid exposing my public IP or relying on port forwarding, I used a reverse proxy through ngrok — a safer way to host and test the server while learning more about server management and Unity integration.</p>
+
+    <h2>Explanation</h2>
+    <p>The script I chose to highlight is the core of 3D Nonogram's level editor — it lets players create and edit voxel-based puzzles directly inside the game. When active, it:</p>
+    <ul>
+        <li>Detects voxel interactions using an optimized raycast system (Physics.RaycastNonAlloc) to avoid memory allocations</li>
+        <li>Handles different editing modes — placing, erasing, and painting voxels based on player input</li>
+        <li>Maintains undo/redo history through a custom command system, letting players revert or reapply actions</li>
+        <li>Synchronizes voxel data with a GridSaveData structure for smooth saving, loading, and uploading of custom levels</li>
+        <li>Shows a transparent voxel that follows the player's cursor, previewing where the next block will be placed</li>
+    </ul>
+    <p>For data management, the editor serializes all voxel information into JSON files for easy storage and server integration — letting 3D Nonogram support full in-game level creation, editing, and sharing without external tools.</p>
+
+    <a class="snippet-link" href="https://github.com/Canpaii/3D-Nonogram-Project" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+      View code snippet on GitHub
+    </a>
+
+    <h2>Everything I learned</h2>
+    <div class="learned-grid">
+      <div class="learned-card">
+        <h4>Server development</h4>
+        <p>Hosted and managed a Flask backend on a Raspberry Pi 5, and integrated Unity for communication between the game and the server.</p>
+      </div>
+      <div class="learned-card">
+        <h4>Security practices</h4>
+        <p>Used ngrok as a reverse proxy to avoid port forwarding and minimize potential security risks.</p>
+      </div>
+      <div class="learned-card">
+        <h4>Data serialization</h4>
+        <p>Implemented JSON-based serialization to move 3D puzzle data between Unity and the backend server.</p>
+      </div>
+      <div class="learned-card">
+        <h4>Game architecture</h4>
+        <p>Designed and built systems for level creation, saving, and loading within Unity.</p>
+      </div>
+    </div>
+
+    <div class="proj-nav">
+      <a href="brawl-heaven.html">&larr; Go to Brawl Heaven</a>
+      <a class="github-mid" href="https://github.com/Canpaii/3D-Nonogram-Project" target="_blank" rel="noopener">~Github~</a>
+      <a class="next" href="oil-defenders.html">Go to Oil Defenders &rarr;</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Can Silay</span>
+    <a href="mailto:Cansilay70@gmail.com">Cansilay70@gmail.com</a>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
