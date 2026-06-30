@@ -5,17 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Can Silay — Game Developer</title>
 <meta name="description" content="Can Silay — third-year game development student building gameplay systems, VR experiences, and tools in Unity and C#.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%230d1117'/%3E%3Ctext x='12' y='17' font-family='monospace' font-size='13' fill='%235fd3df' text-anchor='middle'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%2312002B'/%3E%3Ctext x='12' y='17' font-family='monospace' font-size='13' fill='%23C852FF' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<!-- Groovy fonts: Pacifico (display) + Nunito (body) + JetBrains Mono (code) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="bracket">&lt;</span>Can Silay<span class="bracket">/&gt;</span></a>
+    <a class="brand" href="index.html">Can Silay ✦</a>
     <nav class="main-nav" aria-label="Primary">
       <a class="nav-link" href="#about">about</a>
       <a class="nav-link" href="#projects">projects</a>
@@ -66,7 +67,7 @@
         <h2>About me</h2>
         <p>My name is Can Silay. I'm 21 years old and a third-year student at Deltion College studying Creative Developer. I'm a programmer with two years of Unity experience.</p>
         <p>I enjoy exploring different aspects of Unity development and am building a broad skill set across gameplay programming, systems design, and VR.</p>
-        <p>I like experimenting with different aspects of game development and immersion, as seen in my projects — from implementing a drawing mechanic in my fighting game, to developing a VR drum rhythm game, to creating a home server where people can upload levels made in my 3D nonogram editor.</p>
+        <p>I like experimenting with different aspects of game development and immersion — from implementing a drawing mechanic in my fighting game, to developing a VR drum rhythm game, to creating a home server where people can upload levels made in my 3D nonogram editor.</p>
         <p>My goal is to keep expanding my knowledge of game development while taking on new challenges that push my technical and creative skills.</p>
       </div>
       <div class="about-photo">
@@ -191,11 +192,69 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© 2026 Can Silay</span>
+    <span>© 2026 Can Silay ✦</span>
     <span>built with HTML, CSS &amp; a bit of JS</span>
   </div>
 </footer>
 
 <script src="main.js"></script>
+<script>
+  // Groovy terminal typewriter
+  const terminal = document.querySelector('[data-terminal]');
+  if (terminal) {
+    const lines = [
+      { text: '$ whoami', color: 't-pink' },
+      { text: 'can_silay // game dev', color: 't-purple' },
+      { text: '' },
+      { text: '$ ls projects/', color: 't-pink' },
+      { text: '🥁 drum-heaven.cs', color: 't-green' },
+      { text: '🥊 brawl-heaven.cs', color: 't-green' },
+      { text: '🗼 oil-defenders.cs', color: 't-green' },
+      { text: '🧩 3d-nonogram.cs',  color: 't-green' },
+      { text: '' },
+      { text: '$ echo $STACK', color: 't-pink' },
+      { text: 'Unity · C# · VR · Flask', color: 't-yellow' },
+    ];
+
+    let lineIdx = 0, charIdx = 0;
+    let html = '';
+    const cursor = '<span class="cursor"></span>';
+
+    function tick() {
+      if (lineIdx >= lines.length) {
+        terminal.innerHTML = html + cursor;
+        return;
+      }
+      const line = lines[lineIdx];
+      if (charIdx <= line.text.length) {
+        const partial = line.text.slice(0, charIdx);
+        const colorClass = line.color ? ` class="${line.color}"` : '';
+        terminal.innerHTML = html +
+          (colorClass ? `<span${colorClass}>${partial}</span>` : partial) +
+          cursor;
+        charIdx++;
+        setTimeout(tick, charIdx === 1 && line.text ? 60 : 28);
+      } else {
+        const colorClass = line.color ? ` class="${line.color}"` : '';
+        html += (colorClass ? `<span${colorClass}>${line.text}</span>` : line.text) + '\n';
+        lineIdx++;
+        charIdx = 0;
+        setTimeout(tick, line.text ? 180 : 60);
+      }
+    }
+    tick();
+  }
+
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+
 </body>
 </html>
