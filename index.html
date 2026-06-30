@@ -5,18 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Can Silay — Game Developer</title>
 <meta name="description" content="Can Silay — third-year game development student building gameplay systems, VR experiences, and tools in Unity and C#.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%2312002B'/%3E%3Ctext x='12' y='17' font-family='monospace' font-size='13' fill='%23C852FF' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
-<!-- Groovy fonts: Pacifico (display) + Nunito (body) + JetBrains Mono (code) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%232B1142'/%3E%3Ctext x='12' y='17' font-family='sans-serif' font-weight='800' font-size='13' fill='%23FF4FA3' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html">Can Silay ✦</a>
+    <a class="brand" href="index.html">Can Silay</a>
     <nav class="main-nav" aria-label="Primary">
       <a class="nav-link" href="#about">about</a>
       <a class="nav-link" href="#projects">projects</a>
@@ -49,12 +48,23 @@
         <a class="btn" href="#contact">Get in Touch</a>
       </div>
     </div>
-    <div class="terminal" aria-hidden="true">
-      <div class="terminal-bar">
-        <span></span><span></span><span></span>
-        <span class="label">portfolio.sh</span>
-      </div>
-      <div class="terminal-body" data-terminal></div>
+
+    <!-- Flat retro pop-art swirl, replaces the old terminal box -->
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="170" fill="#44216A" stroke="#1A0930" stroke-width="6"/>
+        <path d="M200 60 C260 60 300 110 280 160 C260 210 180 200 180 250 C180 300 240 320 280 290"
+              fill="none" stroke="#FF4FA3" stroke-width="16" stroke-linecap="round"/>
+        <path d="M200 340 C140 340 100 290 120 240 C140 190 220 200 220 150 C220 100 160 80 120 110"
+              fill="none" stroke="#FFD23D" stroke-width="16" stroke-linecap="round"/>
+        <circle cx="280" cy="290" r="14" fill="#FF8A3D" stroke="#1A0930" stroke-width="4"/>
+        <circle cx="120" cy="110" r="14" fill="#B265FF" stroke="#1A0930" stroke-width="4"/>
+        <circle cx="200" cy="200" r="36" fill="#FFD23D" stroke="#1A0930" stroke-width="6"/>
+        <circle cx="80" cy="80" r="10" fill="#FF4FA3"/>
+        <circle cx="330" cy="120" r="7" fill="#FF8A3D"/>
+        <circle cx="70" cy="300" r="8" fill="#B265FF"/>
+        <circle cx="320" cy="320" r="9" fill="#FFD23D"/>
+      </svg>
     </div>
   </div>
 </section>
@@ -192,59 +202,13 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© 2026 Can Silay ✦</span>
+    <span>© 2026 Can Silay</span>
     <span>built with HTML, CSS &amp; a bit of JS</span>
   </div>
 </footer>
 
 <script src="main.js"></script>
 <script>
-  // Groovy terminal typewriter
-  const terminal = document.querySelector('[data-terminal]');
-  if (terminal) {
-    const lines = [
-      { text: '$ whoami', color: 't-pink' },
-      { text: 'can_silay // game dev', color: 't-purple' },
-      { text: '' },
-      { text: '$ ls projects/', color: 't-pink' },
-      { text: '🥁 drum-heaven.cs', color: 't-green' },
-      { text: '🥊 brawl-heaven.cs', color: 't-green' },
-      { text: '🗼 oil-defenders.cs', color: 't-green' },
-      { text: '🧩 3d-nonogram.cs',  color: 't-green' },
-      { text: '' },
-      { text: '$ echo $STACK', color: 't-pink' },
-      { text: 'Unity · C# · VR · Flask', color: 't-yellow' },
-    ];
-
-    let lineIdx = 0, charIdx = 0;
-    let html = '';
-    const cursor = '<span class="cursor"></span>';
-
-    function tick() {
-      if (lineIdx >= lines.length) {
-        terminal.innerHTML = html + cursor;
-        return;
-      }
-      const line = lines[lineIdx];
-      if (charIdx <= line.text.length) {
-        const partial = line.text.slice(0, charIdx);
-        const colorClass = line.color ? ` class="${line.color}"` : '';
-        terminal.innerHTML = html +
-          (colorClass ? `<span${colorClass}>${partial}</span>` : partial) +
-          cursor;
-        charIdx++;
-        setTimeout(tick, charIdx === 1 && line.text ? 60 : 28);
-      } else {
-        const colorClass = line.color ? ` class="${line.color}"` : '';
-        html += (colorClass ? `<span${colorClass}>${line.text}</span>` : line.text) + '\n';
-        lineIdx++;
-        charIdx = 0;
-        setTimeout(tick, line.text ? 180 : 60);
-      }
-    }
-    tick();
-  }
-
   // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.main-nav');
